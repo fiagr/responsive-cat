@@ -1,3 +1,151 @@
-* {
-  box-sizing: border-box;
+/* Mobile first = css utanför media queris är för mobil */
+
+html {
+  font-size: 16px;
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+  height: 100%;
+  background-color: olive;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #8f2424;
+  padding: 20px;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  background-color: aqua;
+}
+
+nav .nav {
+  display: none;
+  background-color: blueviolet;
+}
+
+nav a {
+  margin: 10px;
+  color: white;
+  text-decoration: none;
+  background-color: rgb(72, 255, 0);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.nav {
+  display: none;
+}
+
+/* Stil för hamburgermeny*/
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  background-color: blue;
+}
+
+.hamburger span {
+  display: inline-block;
+  background-color: cyan;
+  width: 25px;
+  height: 3px;
+  margin: 4px 0;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  background-color: brown;
+}
+
+.button {
+  background-color: #555;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 1rem;
+  background-color: chartreuse;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #f1f1f1;
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: cornflowerblue;
+}
+
+.section1 {
+  color: crimson;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  background-color: rgb(30, 210, 180);
+}
+
+.section1 img {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  background-color: rgb(54, 52, 122);
+}
+
+.section1Text {
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+.section1 h2 {
+  font-size: 2.5rem;
+  background-color: rgb(222, 135, 170);
+}
+
+.catGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  background-color: crimson;
+}
+
+.catGrid img {
+  width: 100%;
+  height: auto;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+*/ @media (min-width: 768px) {
+  nav .nav {
+    display: flex;
+  }
+
+  .hamburger {
+    display: none;
+  }
 }
