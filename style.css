@@ -1,44 +1,57 @@
 /* Mobile first = css utanför media queris är för mobil */
 
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   font-size: 16px;
   height: 100%;
 }
 
 body {
-  margin: 0px;
-  height: 100%;
-  background-color: olive;
+  box-sizing: border-box;
+  height: auto;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 header {
   display: flex;
   justify-content: space-between;
-  background-color: #8f2424;
   padding: 20px;
   align-items: center;
-  color: white;
+  color: #fff;
+  background-color: #333;
 }
 
 nav {
   display: flex;
   align-items: center;
-  background-color: aqua;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 nav .navigation {
   display: none;
-  background-color: blueviolet;
 }
 
 nav a {
   margin: 10px;
-  color: white;
+  color: #fff;
   text-decoration: none;
-  background-color: rgb(72, 255, 0);
+  background-color: #333;
   padding: 5px 10px;
   border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* För att animera färgändringen */
+}
+
+nav a:hover {
+  background-color: #555; /* Ändra bakgrundsfärgen vid hover */
+  color: #ff0; /* Ändra textfärgen vid hover */
 }
 
 /* Stil för hamburgermeny*/
@@ -47,75 +60,93 @@ nav a {
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  background-color: blue;
+  padding: 10px;
 }
 
 .hamburger span {
   display: inline-block;
-  background-color: cyan;
-  width: 25px;
-  height: 3px;
-  margin: 4px 0;
+  background-color: #fff;
+  width: 30px;
+  height: 2px;
+  margin: 3px 0;
 }
 
 main {
+  padding: 20px;
   display: flex;
   justify-content: center;
-  background-color: brown;
 }
 
 .button {
+  max-width: fit-content;
   background-color: #555;
   color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin: 20px 0; /* Marginal över och under */
+  transition: background-color 0.3s ease; /* För att animera färgändringen */
+}
+
+.button:hover {
+  background-color: #333; /* Ändra färgen vid hover */
+  color: #fff; /* Om du vill ändra textfärgen vid hover, annars kan du ta bort denna rad */
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  max-width: 80%;
+  margin: 0;
   font-size: 1rem;
-  background-color: chartreuse;
 }
 
 .section {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  background-color: #f1f1f1;
-  margin: 10px;
-  border: 1px solid #ddd;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  gap: 20px;
   border-radius: 5px;
-  background-color: cornflowerblue;
+  background-color: #f1f1f1;
+  transition: transform 0.3s ease; /* Lägger till en övergångseffekt */
 }
 
+.section img {
+  border-radius: 10px;
+}
+
+.section img:hover {
+  transform: scale(1.1); /* Förstorar bilden vid hover */
+}
+.section h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.section p {
+  color: #333;
+  margin-bottom: 20px;
+}
 .section1 {
-  color: crimson;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  background-color: rgb(93, 30, 210);
+  background-color: f1f1f1;
+  transition: transform 0.3s ease; /* Lägger till en övergångseffekt */
+}
+
+.section1 img:hover {
+  transform: scale(1.1); /* Förstorar bilden vid hover */
 }
 
 .section1 img {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   height: auto;
   border-radius: 10px;
-  background-color: rgb(54, 52, 122);
 }
 
 .section1Text {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centrerar horisontellt*/
-  text-align: center; /* Centrerar texten */
   max-width: 100%;
   overflow-wrap: break-word;
 }
@@ -124,22 +155,23 @@ main {
   width: 100%;
   font-size: 2rem;
   overflow-wrap: break-word;
-  background-color: rgb(222, 135, 170);
 }
 
 .catGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 5px;
+  grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
-  background-color: rgb(220, 167, 20);
 }
 
 .catGrid img {
   width: 100%;
-  height: 150px;
-  border-radius: 5px;
-  object-fit: cover;
+  height: auto;
+  margin-top: 10px;
+  transition: transform 0.3s ease; /* Lägger till en övergångseffekt */
+}
+
+.catGrid img:hover {
+  transform: scale(1.1); /* Förstorar bilden vid hover */
 }
 
 footer {
@@ -150,83 +182,10 @@ footer {
 }
 
 @media (min-width: 768px) {
-  .hamburger {
-    display: none;
-  }
-  .navigation {
-    display: flex !important;
-  }
-
-  .section1 {
-    flex-direction: row;
-  }
-
-  .section1 img {
-    width: 50%;
-    margin-left: 20px;
-  }
-
-  .section {
-    flex-direction: row;
-    padding: 20px;
-    margin: 10px;
-    align-items: center;
-  }
-
-  .section img {
-    width: 50%;
-    margin-left: 20px;
-  }
-
-  .section-text {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .section h2 {
-    margin-bottom: 10px;
-  }
-
-  .section p {
-    margin-bottom: 10px;
-  }
-
-  .image-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .cat-Grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 5px;
-    width: 100%;
-  }
-
-  .catGrid img {
-    width: 100%;
-    height: 100px; /* Sätter en fast höjd för bilderna */
-    border-radius: 5px;
-    object-fit: cover; /* Ser till att bilderna täcker sina containrar och behåller sina proportioner */
-  }
-}
-
-@media (max-width: 768px) {
   nav .navigation {
-    display: none;
-  }
-  .hamburger {
     display: flex;
   }
-  .section {
-    flex-direction: column;
-  }
-  .section img {
-    width: 100%;
+  .hamburger {
+    display: none;
   }
 }
