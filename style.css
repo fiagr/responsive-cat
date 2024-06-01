@@ -1,4 +1,4 @@
-/* Mobile first = css utanför media queris är för mobil */
+/* Mobile first */
 
 *,
 *::before,
@@ -7,19 +7,16 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 html {
   font-size: 16px;
   height: 100%;
 }
-
 body {
   box-sizing: border-box;
   height: auto;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-
 header {
   display: flex;
   justify-content: space-between;
@@ -28,17 +25,14 @@ header {
   color: #fff;
   background-color: #333;
 }
-
 nav {
   display: flex;
   align-items: center;
   color: rgb(255, 255, 255);
 }
-
 nav .navigation {
   display: none;
 }
-
 nav a {
   margin: 10px;
   color: #fff;
@@ -46,23 +40,18 @@ nav a {
   background-color: #333;
   padding: 5px 10px;
   border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease; /* För att animera färgändringen */
+  transition: background-color 0.3s ease, color 0.3s ease; /* färgändring */
 }
-
 nav a:hover {
-  background-color: #555; /* Ändra bakgrundsfärgen vid hover */
-  color: #ff0; /* Ändra textfärgen vid hover */
+  background-color: #555; /* Ändra bakgrundsfärg hover */
+  color: #ff0; /* Ändra textfärg hover */
 }
-
-/* Stil för hamburgermeny*/
-
 .hamburger {
   display: flex;
   flex-direction: column;
   cursor: pointer;
   padding: 10px;
 }
-
 .hamburger span {
   display: inline-block;
   background-color: #fff;
@@ -70,13 +59,11 @@ nav a:hover {
   height: 2px;
   margin: 3px 0;
 }
-
 main {
   padding: 20px;
   display: flex;
   justify-content: center;
 }
-
 .button {
   max-width: fit-content;
   background-color: #555;
@@ -85,20 +72,16 @@ main {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* För att animera färgändringen */
+  transition: background-color 0.3s ease; /* Animera färgändring */
 }
-
 .button:hover {
-  background-color: #333; /* Ändra färgen vid hover */
-  color: #fff; /* Om du vill ändra textfärgen vid hover, annars kan du ta bort denna rad */
+  background-color: #333; /* Ändra färg hover */
 }
-
 .container {
   max-width: 80%;
   margin: 0;
   font-size: 1rem;
 }
-
 .section {
   display: flex;
   flex-direction: column;
@@ -108,21 +91,18 @@ main {
   gap: 20px;
   border-radius: 5px;
   background-color: #f1f1f1;
-  transition: transform 0.3s ease; /* Lägger till en övergångseffekt */
+  transition: transform 0.3s ease; /* övergång */
 }
-
 .section img {
   border-radius: 10px;
 }
-
 .section img:hover {
-  transform: scale(1.1); /* Förstorar bilden vid hover */
+  transform: scale(1.1); /* Förstorar bilden hover */
 }
 .section h2 {
   margin-bottom: 10px;
   color: #333;
 }
-
 .section p {
   color: #333;
   margin-bottom: 20px;
@@ -133,54 +113,45 @@ main {
   align-items: center;
   gap: 30px;
   background-color: f1f1f1;
-  transition: transform 0.3s ease; /* Lägger till en övergångseffekt */
+  transition: transform 0.3s ease; /* övergång */
 }
-
 .section1 img:hover {
-  transform: scale(1.1); /* Förstorar bilden vid hover */
+  transform: scale(1.1); /* Förstorar bild hover */
 }
-
 .section1 img {
   width: 100%;
   height: auto;
   border-radius: 10px;
 }
-
 .section1Text {
   max-width: 100%;
   overflow-wrap: break-word;
 }
-
 .section1 h2 {
   width: 100%;
   font-size: 2rem;
   overflow-wrap: break-word;
 }
-
 .catGrid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
 }
-
 .catGrid img {
   width: 100%;
   height: auto;
   margin-top: 10px;
-  transition: transform 0.3s ease; /* Lägger till en övergångseffekt */
+  transition: transform 0.3s ease; /* övergång */
 }
-
 .catGrid img:hover {
-  transform: scale(1.1); /* Förstorar bilden vid hover */
+  transform: scale(1.1); /* Förstorar bild hover */
 }
-
 footer {
   background-color: #333;
   color: #fff;
   text-align: center;
   padding: 10px;
 }
-
 @media (min-width: 768px) {
   nav .navigation {
     display: flex;
